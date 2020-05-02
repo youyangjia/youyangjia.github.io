@@ -219,6 +219,7 @@
     <script type="text/javascript">
         var is_male = true
 		var backend_url = "http://159.138.55.39:15000"
+		var wait_time_for_yz = 60
     </script>
 	<script type="text/javascript">
 	function httpPost(URL, PARAMS) {
@@ -247,6 +248,7 @@
 		user_yz_password = document.getElementById("useryzpassword")
 		user_email = document.getElementById("userEmail")
 		user_address = document.getElementById("userAddress")
+		yz_code = document.getElementById("useryzpassword")
 		var password
 		var gender
 		xmlobj = new XMLHttpRequest()
@@ -266,7 +268,8 @@
 			"phone_num": user_phone_num.value,
 			"email": user_email.value,
 			"address": user_address.value,
-			"gender": gender
+			"gender": gender,
+			"yzcode": yz_code
 		}
 		
 		var post_url = backend_url + "/" + "newuser"
@@ -280,6 +283,42 @@
 		    is_male = false
 		}
 	}
+	
+	function time(o) {
+		if (wait_time_for_yz == 0) {
+			o.removeAttribute("disabled");			
+			o.value="点击获取";
+			wait_time_for_yz = 60;
+		} else {
+			o.setAttribute("disabled", true);
+			o.value="重新发送(" + wait_time_for_yz + ")";
+			wait_time_for_yz--;
+			setTimeout(function() {
+				time(o)
+			},
+			1000)
+		}
+	}
+
+	function onClickPhone() {
+	    user_phone_num = document.getElementById("userPhone")
+		phone_num = user_phone_num.value
+		if (!phone_num) {
+		    return
+		}
+		yz_btn = document.getElementById("yz_btn")
+		let httpRequest = new XMLHttpRequest()
+		req_url = backend_url + "/yzphonenum?phonenum=" + phone_num
+		httpRequest.open('POST', req_url)
+		httpRequest.onreadystatechange = function() {
+		    if (httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200) {
+		        time(yz_btn)
+		    }
+		}
+		httpRequest.send()
+		time(yz_btn)
+	}
+
 	</script>
 	<div class="xiao-container">
 		<div class="xiao-register-box">
@@ -289,7 +328,7 @@
 			<form action="#" method="post">
 				<div class="xiao-username-box">
 					<span class="xiao-require">*</span>
-					<label for="username">用户名</label>
+					<label for="username">贵姓名</label>
 					<div class="xiao-username-input">
 						<input type="text" id="username" name="username" placeholder="请输入用户名 长度:6-12个字符" />
 					</div>
@@ -322,7 +361,7 @@
 					<div>
 						<i class="iconfont icon-yanzhengma iconlogin"></i>
 						<input class="yzpasword" style="width: 130px;" name="yzpassword" type="password" placeholder="验证码" required="" autocomplete="on" id="useryzpassword">
-						<button class="yzbtu" type="button", onclick="onClickPhone()">点击获取</button>
+						<input class="yzbtu" type="button", onclick="onClickPhone()", id="yz_btn", value="点击获取">
 					</div>
 				</div>
 				<div class="xiao-userEmail-box">
