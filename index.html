@@ -115,6 +115,19 @@
 		border: 2px solid #ccc;
 		border-radius: 5px;
 	}
+	.yanzheng-input{
+		position: absolute;
+		width: 420px;
+		height: 40px;
+		line-height: 40px;
+		margin-top:375px;
+		margin-left:280px;
+		font-weight: 700;
+	}
+	.xiao-userPhone-input{
+		display: inline-block;
+		margin-left: 28px;
+	}
 	.xiao-userEmail-box{
 		position: absolute;
 		width: 420px;
@@ -236,7 +249,13 @@
 						<input type="text" id="userPhone" name="userPhone" placeholder="请输入您的手机号码，11位有效数字" />
 					</div>
 				</div>
-				
+				<div class="yanzheng-input">
+					<div>
+						<i class="iconfont icon-yanzhengma iconlogin"></i>
+						<input class="yzpasword" style="width: 130px;" name="yzpassword" type="password" placeholder="验证码" required="" autocomplete="on">
+						<button class="yzbtu" type="button">点击获取</button>
+					</div>
+				</div>
 				<div class="xiao-userEmail-box">
 					<span class="xiao-require">*</span>
 					<label for="userEmail">电子邮箱</label>
