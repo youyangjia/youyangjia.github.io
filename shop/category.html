@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>阿蚌丁商城APP</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link rel="stylesheet" type="text/css" href="css/basic.css" />
+	<script type="text/javascript" charset="utf-8">
+	mui.init();
+	</script>
+	<style>
+			.mui-row.mui-fullscreen>[class*="mui-col-"] {
+				height: 100%;
+			}
+			.mui-col-xs-3,
+			.mui-control-content {
+				overflow-y: auto;
+				height: 100%;
+			}
+			.mui-segmented-control .mui-control-item {
+				line-height: 50px;
+				width: 100%;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				background-color: #fff;
+			}
+		</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		 <a class="mui-icon mui-icon-location mui-pull-left" style="color: #000000"></a>	
+		<h1 class="mui-title"> <div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" placeholder="请输入关键字">
+						</div></h1>		       
+		<a class="mui-icon mui-icon-extra mui-icon-extra-notice mui-pull-right" style="color: #000000" href="notice.html"><span class="notice-hongdian"></span></a>
+	</header>
+	<nav class="mui-bar mui-bar-tab mui-bar-topline">
+		<a class="mui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="category.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="fenxiaozhongxin.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
+			<span class="mui-tab-label">分销中心</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</nav>	
+		<div class="mui-content mui-row mui-fullscreen">
+			<div class="mui-col-xs-3">
+				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<a class="mui-control-item mui-active" href="#content1">个护美妆</a>
+					<a class="mui-control-item" href="#content2">营养保健</a>
+					<a class="mui-control-item" href="#content3">速食生鲜</a>
+				</div>
+			</div>
+			<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;">
+				<div id="content1" class="mui-control-content mui-active">
+					  <ul class="mui-table-view mui-grid-view">
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4">
+		            <a href="goods.html">
+		                <img class="mui-media-object" src="images/pro_mianmo.jpg">
+		                <div class="category-pro-name">牡蛎精华保湿面膜</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4">
+		            <a href="goods.html">
+		                <img class="mui-media-object" src="images/pro_lzmtao.jpg">
+		                <div class="category-pro-name">牡蛎精华保湿面膜</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4">
+		            <a href="goods.html"><img class="mui-media-object" src="images/pro_mianmo.jpg">
+		                <div class="category-pro-name">牡蛎精华保湿面膜</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4">
+		            <a href="goods.html">
+		                <img class="mui-media-object" src="images/pro_lzmtao.jpg">
+		                <div class="category-pro-name">牡蛎精华保湿面膜</div></a></li>
+		    </ul>    
+			    </div>
+				<div id="content2" class="mui-control-content">
+					 <ul class="mui-table-view mui-grid-view">
+					    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+					        <a href="goods.html">
+					            <img class="mui-media-object" src="images/pro_xxp.jpg">
+					            <div class="category-pro-name">回春态锌硒片</div></a></li>
+					    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+					        <a href="goods.html">
+					            <img class="mui-media-object" src="images/pro_dbf.jpg">
+					            <div class="category-pro-name">牡蛎肽初胚燕麦固体饮料</div></a></li>
+					    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+					        <a href="goods.html"><img class="mui-media-object" src="images/pro_kll.jpg">
+					            <div class="category-pro-name">卡路里</div></a></li>
+					    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+					        <a href="goods.html">
+					            <img class="mui-media-object" src="images/pro_xxp.jpg">
+					            <div class="category-pro-name">回春态锌硒片</div></a></li>
+					</ul>    
+				</div>
+				<div id="content3" class="mui-control-content">
+					 <ul class="mui-table-view mui-grid-view">
+					    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+					        <a href="goods.html">
+					            <img class="mui-media-object" src="images/pro_oyster.jpg">
+					            <div class="category-pro-name">净化蚝</div></a></li>
+					    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+					        <a href="goods.html">
+					            <img class="mui-media-object" src="images/pro_dbf.jpg">
+					            <div class="category-pro-name">金鲳鱼</div></a></li>
+					    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+					        <a href="goods.html"><img class="mui-media-object" src="images/pro_oyster.jpg">
+					            <div class="category-pro-name">阿蚌丁蚝苗</div></a></li>
+					   
+					</ul>    
+				</div>
+			</div>
+		</div>		
+<script>mui('body').on('tap','a',function(){window.top.location.href=this.href;});</script>		
+</body>
+</html>

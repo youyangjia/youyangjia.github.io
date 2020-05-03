@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>个人中心——阿蚌丁商城APP</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/basic.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+	<script src="js/iconfont.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>	
+	<style>.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{font-size:.9rem;text-overflow:none;}	
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-transparent">
+		<a class="mui-icon mui-icon-gear mui-pull-right" style="color: #000000;"></a> 
+		<a class="mui-icon mui-icon-extra mui-icon-extra-notice mui-pull-right" href="notice.html" style="color: #666666;padding-right:10px;"><span class="notice-hongdian"></span></a>
+	</header>
+	<nav class="mui-bar mui-bar-tab mui-bar-topline">
+		<a class="mui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="fenxiaozhongxin.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
+			<span class="mui-tab-label">分销中心</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</nav>	
+	<div class="mui-content">	
+		<div class="user-bg">					
+					<div class="mui-clearfix" style="padding: 4rem 10px 0 10px;">
+							<a href="#"><img src="images/pingjiaicon.jpg" class="mui-pull-left userface">
+							<div class="mui-media-body" style="margin: 1rem 0 0 6em;color: #ffffff;">黄飞鸿
+							<p class='mui-ellipsis' style="color: #ffffff;">普通会员</p>
+							</div>
+							</a>												
+					</div>
+				<div class="supervip mui-clearfix"><a class="mui-btn mui-btn-outlined iconfont icon-zuanshi mui-pull-left">开通VIP会员</a> <a class="mui-btn mui-btn-outlined mui-pull-right">会员特权</a> </div>
+					
+		</div>	
+	<div class="mui-card" style="margin:30px 10px 10px 10px">
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-col-xs-4 mui-col-sm-4"><a href="#">
+					128.8		                   
+		                    <div class="mui-media-body">余额</div></a></li>		         
+		            <li class="mui-table-view-cell mui-col-xs-4 mui-col-sm-4"><a href="#">
+		                   0
+		                    <div class="mui-media-body">优惠券</div></a></li>
+		            <li class="mui-table-view-cell mui-col-xs-4 mui-col-sm-4"><a href="#">
+		                   60
+		                    <div class="mui-media-body">积分</div></a></li>		                     
+		    </ul> 	 
+	</div>
+	<div class="mui-card" style="margin:10px">
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-col-xs-3 mui-col-sm-3"><a href="order_list.html">
+					   <span class="mui-icon mui-icon-extra mui-icon-extra-prech daifukuan-icon"></span>	                   
+		                    <div class="mui-media-body">待付款</div></a></li>		         
+		            <li class="mui-table-view-cell mui-col-xs-3 mui-col-sm-3"><a href="order_list.html">
+		                    <span class="mui-icon mui-icon-extra mui-icon-extra-gift daishouhuo-icon"></span>
+		                    <div class="mui-media-body">侍收货</div></a></li>
+		            <li class="mui-table-view-cell mui-col-xs-3 mui-col-sm-3"><a href="order_list.html">
+		                    <span class="mui-icon mui-icon-extra mui-icon-extra-heart daipingjia-icon"></span>
+		                    <div class="mui-media-body">待评价</div></a></li>
+					  <li class="mui-table-view-cell mui-col-xs-3 mui-col-sm-3"><a href="order_list.html">
+					        <span class="mui-icon mui-icon-refresh tuihuanghuo-icon"></span>
+					        <div class="mui-media-body">退换货</div></a></li>						 											 
+		    </ul> 	 
+	</div>
+		<div class="mui-card" style="margin: 10px;">
+				<ul class="mui-table-view">					
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-icon mui-icon-extra mui-icon-extra-gold qianbao-icon"></span>我的钱包
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="address-select.html">
+							<span class="mui-icon mui-icon mui-icon-location address-icon"></span>收货地址
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-icon mui-icon mui-icon-star shoucang-icon"></span>我的收藏
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-icon mui-icon-extra mui-icon-extra-card ka-icon"></span>我的银行卡
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="mui-icon mui-icon mui-icon-gear shezhi-icon"></span>设置
+						</a>
+					</li>
+				</ul>
+			</div>
+	</div>
+<script>mui('body').on('tap','a',function(){window.top.location.href=this.href;});</script>	
+</body>
+</html>

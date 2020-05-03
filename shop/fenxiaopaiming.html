@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>累计佣金排名——阿蚌丁商城APP</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/basic.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+	<script src="js/iconfont.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>	
+		<style>
+			.mui-media-body{line-height: 42px;}
+			.mingci-num{width: 20px;text-align:center;}
+		</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		 <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">累计佣金排名</h1>	
+	</header>
+	<nav class="mui-bar mui-bar-tab mui-bar-topline">
+		<a class="mui-tab-item mui-active" href="fenxiaozhongxin.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">分销中心</span>
+		</a>
+		<a class="mui-tab-item" href="fenxiaoyongjin.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-gold"></span>
+			<span class="mui-tab-label">分销佣金</span>
+		</a>
+		<a class="mui-tab-item" href="fenxiaoyjmingxi.html">
+			<span class="mui-icon mui-icon-list"></span>
+			<span class="mui-tab-label">佣金明细</span>
+		</a>
+		<a class="mui-tab-item" href="fenxiaowodefensi.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
+			<span class="mui-tab-label">我的粉丝</span>
+		</a>
+		<a class="mui-tab-item" href="index-wodexiaodian.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-hotel"></span>
+			<span class="mui-tab-label">我的小店</span>
+		</a>
+	</nav>	
+	<div class="mui-content" style="background: #FF8F30;">	
+		
+		<div class="mui-content-padded mui-text-center huizhang"><span>暂未上榜</span><p>我的名次</p></div>
+		<div class="mui-text-center yjfd"><span>0.00</span><p>累计佣金</p></div>
+		<h5 class="mui-content-padded mui-text-center" style="color: #ffffff;">累计佣金排名为定时刷新（最多显示50名）</h5>
+		
+		<ul class="mui-table-view mui-content-padded">
+			
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<span class="mui-media-object mui-pull-left"><img src="images/jinpai.png"></span>
+						<img class="mui-media-object mui-pull-left" src="images/pingjiaicon.jpg" style="margin:0 10px 0 5px;">
+						<div class="mui-media-body">随缘工空叱咤<span class="mui-pull-right">1870.60</span></div>						
+					</a>
+				</li>							
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<span class="mui-media-object mui-pull-left"><img src="images/yinpai.png"></span>
+						<img class="mui-media-object mui-pull-left" src="images/pingjiaicon.jpg" style="margin:0 10px 0 5px;">
+						<div class="mui-media-body">随缘<span class="mui-pull-right">1870.60</span></div>						
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<span class="mui-media-object mui-pull-left"><img src="images/tongpai.png"></span>
+						<img class="mui-media-object mui-pull-left" src="images/pingjiaicon.jpg" style="margin:0 10px 0 5px;">
+						<div class="mui-media-body">随缘<span class="mui-pull-right">1870.60</span></div>						
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<span class="mui-media-object mui-pull-left mingci-num">4</span>
+						<img class="mui-media-object mui-pull-left" src="images/pingjiaicon.jpg" style="margin:0 10px 0 5px;">
+						<div class="mui-media-body">随缘<span class="mui-pull-right">1870.60</span></div>						
+					</a>
+				</li>										
+			</ul>	
+		
+	</div>
+<script>
+	mui('.mui-bar-tab').on('tap','a',function(){
+console.log(this.getAttribute('href'));
+location.href = this.getAttribute('href');
+})
+</script>	
+</body>
+</html>

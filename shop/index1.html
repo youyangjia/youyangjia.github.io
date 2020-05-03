@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>阿蚌丁商城APP</title>  
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/basic.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+	<script src="js/iconfont.js"></script>
+<style>.mui-btn{padding: 0 5px;}
+.mui-popover {width:100px;height:80px;font-size: 12px;text-align: left;line-height: 10px;}
+</style>
+		
+</head>
+<body>
+	<header class="mui-bar mui-bar-transparent">
+		 <a class="mui-icon mui-icon-location mui-pull-left" style="color: #000000"></a>	
+		 <h1 class="mui-title"> <div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" placeholder="请输入关键字">
+				</div></h1>		       
+		 <a class="mui-icon mui-icon-extra mui-icon-extra-notice mui-pull-right" style="color: #000000" href="notice.html"><span class="notice-hongdian"></span></a>
+	</header>
+	<nav class="mui-bar mui-bar-tab mui-bar-topline">
+		<a class="mui-tab-item mui-active" data-id="home" href="#bottomPopover">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" data-id="category" href="category.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item"data-id="fenxiaozhongxin" href="fenxiaozhongxin.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
+			<span class="mui-tab-label">分销中心</span>
+		</a>
+		<a class="mui-tab-item" data-id="cart" href="cart.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" data-id="user" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</nav>	
+	
+	<div id="bottomPopover" class="mui-popover mui-popover-bottom">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell"><a href="index1.html">产品页</a>
+					</li>
+					<li class="mui-table-view-cell"><a href="index.html">起始页</a>
+					</li>					
+				</ul>
+			</div>
+		</div>	
+	</div>
+	
+	<div class="mui-content mui-table-view">
+	<div class="mui-slider">
+  <div class="mui-slider-group mui-slider-loop">
+    <!--支持循环，需要重复图片节点-->
+    <div class="mui-slider-item mui-slider-item-duplicate"><a href="goods.html"><img src="1.jpg" /></a></div>
+    <div class="mui-slider-item"><a href="goods.html"><img src="images/banner/1.jpg" /></a></div>
+    <div class="mui-slider-item"><a href="goods.html"><img src="images/banner/2.jpg" /></a></div>
+    <div class="mui-slider-item"><a href="goods.html"><img src="images/banner/cbd.jpg" /></a></div>  
+    <!--支持循环，需要重复图片节点-->
+    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner/1.jpg" /></a></div>
+  </div>
+</div>
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="goods-list.html">
+					<svg class="icon" aria-hidden="true"><use xlink:href="#icon-meizhuang"></use></svg>		                   
+		                    <div class="mui-media-body">个护美妆</div></a></li>		         
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="goods-list.html">
+		                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-yingyangbaojian"></use></svg>
+		                    <div class="mui-media-body">营养保健</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="goods-list.html">
+		                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-shenghao"></use></svg>
+		                    <div class="mui-media-body">速食生鲜</div></a></li>		                     
+		    </ul> 	 
+			<div class="mui-content-padded">
+				<a href="#" target="_blank"><img src="images/ad1.png" width="100%"></a>
+				<h4 class="titlepadding mui-text-center">优惠专区</h4>
+	 <div class="mui-row">
+        <div class="mui-col-xs-6" style="padding-right: 20px;">
+            <li class="mui-table-view-cell youhuizhuanqu mui-list-unstyled">
+                <h4>整点秒杀</h4>
+				<p>整点秒杀专区</p>
+				<img src="images/miaosha.png">
+				<a class="mui-navigate-right">
+                 点击进入
+                </a>
+            </li>
+        </div>
+        <div class="mui-col-xs-6">
+            <li class="mui-table-view-cell youhuizhuanqu mui-list-unstyled">
+                <h4 class="mui-pull-left">限时抢购</h4><time class="mui-pull-right mui-badge-danger daojishi">14:09:53</time>
+				<div class="mui-clearfix"></div>
+                <p>每天23点上线</p>
+				<img src="images/miaosha.png">
+				<a class="mui-navigate-right">
+                     点击进入
+                </a>
+            </li>
+        </div>
+    </div>
+				 
+		 <h4 class="titlepadding mui-text-center">爆款精选</h4>
+		 <ul class="mui-table-view">
+		 	<li class="mui-table-view-cell mui-media">
+		 		<a href="goods.html">
+		 			<img class="mui-media-object baokuan mui-pull-left" src="images/pro_mianmo.jpg">
+		 			<div class="mui-media-body">
+		 				蛎之梦牡蛎精华保湿面膜蛎之梦牡蛎精华保湿面膜
+		 				<p class='mui-ellipsis'>补水保湿 晶莹娇嫩 层层透养水润肌底</p>
+						<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">前2000名减5元</button>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥358<s>￥558</s></h4> <div class="lijiqianggou mui-pull-right">立即抢购</div></div>
+		 			</div>
+		 		</a>
+		 	</li>
+		 	<li class="mui-table-view-cell mui-media">
+		 		<a href="goods.html">
+		 			<img class="mui-media-object baokuan mui-pull-left" src="images/pro_xxp.jpg">
+		 			<div class="mui-media-body">
+		 				回春态锌硒片
+		 				<p class='mui-ellipsis'>成人补锌补硒 增强精子活性</p>
+						<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">下单立减3玩</button>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥358<s>￥558</s></h4> <div class="lijiqianggou mui-pull-right">立即抢购</div></div>
+		 			</div>
+		 		</a>
+		 	</li>
+		 	<li class="mui-table-view-cell mui-media">
+		 		<a href="goods.html">
+		 			<img class="mui-media-object baokuan mui-pull-left" src="images/pro_dbf.jpg">
+		 			<div class="mui-media-body">
+		 				牡蛎肽初胚燕麦固体饮料
+		 				<p class='mui-ellipsis'>动植物双蛋白 补充营养 提高免疫力</p>
+						<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">买就送咔㖨哩1瓶</button>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥358<s>￥558</s></h4> <div class="lijiqianggou mui-pull-right">立即抢购</div></div>
+		 			</div>
+		 		</a>
+		 	</li>
+		 
+		 </ul>
+		 
+		  <div class=""><a href="#" target="_blank"><img src="images/ad2.JPG" width="100%"></a></div>
+		 
+				<h4 class="titlepadding mui-text-center">精品推荐</h4>
+										
+							
+				 <ul class="mui-table-view mui-grid-view">	 
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6"">
+		            <a href="goods.html">
+		                <img class="mui-media-object imgradius" src="images/pro_mianmo.jpg">
+		                <div class="mui-media-body mui-text-left">蛎之梦牡蛎精华保湿面膜</div>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥168</h4> <h6 class="mui-pull-right">1235人付款</h6></div>
+						</a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="goods.html">
+		                <img class="mui-media-object imgradius" src="images/pro_dbf.jpg">
+		                <div class="mui-media-body mui-text-left">牡蛎肽初胚燕麦固体饮料</div>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥168</h4> <h6 class="mui-pull-right">1235人付款</h6></div>
+						</a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="goods.html"><img class="mui-media-object imgradius" src="images/pro_xxp.jpg">
+		                <div class="mui-media-body mui-text-left">回春态锌硒片</div>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥168</h4> <h6 class="mui-pull-right">1235人付款</h6></div>
+						</a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="goods.html">
+		                <img class="mui-media-object imgradius" src="images/pro_kll.jpg">
+		                <div class="mui-media-body mui-text-left">卡禄哩</div>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥168</h4> <h6 class="mui-pull-right">1235人付款</h6></div>
+						</a></li>
+				 <li class="mui-table-view-cell mui-media mui-col-xs-6">
+				    <a href="goods.html">
+				        <img class="mui-media-object imgradius" src="images/pro_lzmtao.jpg">
+				        <div class="mui-media-body mui-text-left">蛎之梦化妆品套餐</div>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥168</h4> <h6 class="mui-pull-right">1235人付款</h6></div>
+						</a></li>		
+				 <li class="mui-table-view-cell mui-media mui-col-xs-6">
+				    <a href="goods.html">
+				        <img class="mui-media-object imgradius" src="images/pro_oyster.jpg">
+				        <div class="mui-media-body mui-text-left">阿蚌丁净化蚝</div>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥168</h4> <h6 class="mui-pull-right">1235人付款</h6></div>
+						</a></li>		
+				 <li class="mui-table-view-cell mui-media mui-col-xs-6">
+				    <a href="goods.html">
+				        <img class="mui-media-object imgradius" src="images/pro_haomiao.jpg">
+				        <div class="mui-media-body mui-text-left">阿蚌丁蚝苗</div>
+						<div class="price_pay"><h4 class="mui-pull-left pricecolor">￥168</h4> <h6 class="mui-pull-right">1235人付款</h6></div>
+						</a></li>		
+		    </ul>    
+	</div>				 
+	<div class="getbottom"><h6>到底了</h6></div>		
+	</div>
+
+	<script src="js/mui.min.js"></script>
+		<script>
+			mui.init();
+			
+			mui.plusReady(function () {
+//				var view = plus.nativeObj.View.getViewById("title");
+//				
+//				var bitmap = new plus.nativeObj.Bitmap("back");
+//				bitmap.loadBase64Data("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAb1BMVEUAAAAAev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8Aev8AAACubimgAAAAI3RSTlMAGfUTGfQTGPMSGPIYGhgaGBsXGxcbFxwXHBccFhwWHRYdHWufDPQAAAABYktHRACIBR1IAAAAB3RJTUUH4QETEBwooeTlkQAAAJVJREFUSMft1EkSgkAQRNFGUXFWHBDBibr/HTUwD5B/48Ig1y+io7u6MqUhf5hsNEY+j5hMgZ/FJ8Xc9ovos3T96utjbfqN/Nb0O/m96Uv5g+mP8ifTn+Ur01/ka9Nf5RvTt/I309/lH6Z/yr9Mn+Q71/MT8B34K/E58Enzv8R/K98HvnF8p3lr8F7izce7lbf3kJ/lDQp9HdBhgg3PAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE3LTAxLTE5VDE2OjI4OjQwKzA4OjAwpTDFwQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNy0wMS0xOVQxNjoyODo0MCswODowMNRtfX0AAAAASUVORK5CYII=");
+//				view.drawBitmap(bitmap, {}, {
+//					top: "10px",
+//					left: "10px",
+//					width: "24px",
+//					height: "24px"
+//				});
+//				
+//				view.setTouchEventRect({top:"0px",left:"0px",width:"44px",height:"100%"});
+			});
+			
+			mui('.mui-scroll-wrapper').scroll();
+			mui('body').on('shown', '.mui-popover', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+			});
+			mui('body').on('hidden', '.mui-popover', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+			});
+		</script>
+<script>
+	setTimeout(function(){
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+         interval:1800//自动轮播周期，若为0则不自动播放，默认为0；
+    });
+},300)</script>
+<script>mui('body').on('tap','a',function(){window.top.location.href=this.href;});</script>
+</body>
+</html>
