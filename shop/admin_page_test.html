@@ -1,0 +1,125 @@
+<html lang="zh"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>后台管理系统</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/basic.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();	
+    </script>
+<body class="main_body" style="">
+<div class="mui-bar mui-bar-transparent">
+
+    <!--主题内容区域 start-->
+        <!-- 内容主体区域 -->
+        <!-- ngView:  --><div ng-view="" class="ng-view-content ng-scope" style=""><div class="content ng-scope" style="">
+    <div class="mui-content-padded">
+        <span class="mui-content-padded">
+          <a href="javascript:;" ng-click="gotoDashboard()">首页</a>
+            <span lay-separator="">/</span>
+          <a href="#/goods/list">商品管理</a>
+            <span lay-separator="">/</span>
+          <a><cite ng-bind="text" class="ng-binding">商品编辑</cite></a>
+        </span>
+    </div>
+
+    <div class="mui-input-group edit-goods" style="">
+        <form class="mui-input-group ng-pristine ng-valid" action="" style="">
+            <div class="mui-input-group">
+                <label>商品名称</label>
+                <div class="mui-button-rowe">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                </div>
+            </div>
+            <div class="mui-input-group">
+                <label>商品代码</label>
+                <div class="mui-button-rowe">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                </div>
+            </div>
+            <div class="mui-input-group">
+                <label>规格</label>
+                <div class="mui-button-row" style="width: 130px ">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                </div>
+            </div>
+
+            <div class="mui-input-group">
+				<label>价格</label>
+                <div class="mui-button-row" style="width: 130px ">
+                    <div class="input-group">
+                        <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                        <span class="input-unit">元</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mui-input-group">
+				<label>排序</label>
+                <div class="mui-button-row" style="width: 130px">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                </div>
+            </div>
+            <div class="mui-input-group">
+				<label>库存</label>
+                <div class="mui-button-row" style="width: 130px">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                </div>
+            </div>
+
+            <div class="mui-input-group">
+				<label>商品图片</label>
+                <div class="mui-button-row">
+                    <div class="goods-images" style="height: 340px; width: 800px; border: 1px solid #CCCCCC ">
+                        <!-- ngRepeat: item in images --><div class="upload-icon ng-scope" ng-repeat="item in images">
+                            <img ng-src="" src="">
+                            <span class="icon-delete" ng-click="images.splice($index, 1)">
+                                <span class="icon-delete-bg"></span>
+                                <span class="icon-delete-font">
+                                    <i class="fa fa-times-circle"></i>
+                                </span>
+                            </span>
+                        </div><!-- end ngRepeat: item in images -->
+                        <!-- 上传图片按钮 -->
+                        <div class="upload-icon" id="uploadImage">
+                            <span class="upload-btn"><i class="fa fa-plus"></i></span>
+                        </div><input class="upload-file" type="file" accept="undefined" name="file">
+                    </div>
+                </div>
+            </div>
+            <div class="mui-input-group" style="">
+                <label>商品详情</label>
+                <div class="mui-button-row" style="width: 800px;">
+                    <!-- 加载编辑器的容器 -->
+					<script id="container" name="content" type="text/plain">
+						这里写你的初始化内容
+					</script>
+					<!-- 配置文件 -->
+					<script type="text/javascript" src="ueditor.config.js"></script>
+					<!-- 编辑器源码文件 -->
+					<script type="text/javascript" src="ueditor.all.js"></script>
+					<!-- 实例化编辑器 -->
+					<script type="text/javascript">
+						var ue = UE.getEditor('container');
+					</script>
+                    <textarea id="ueditorContent" style="display:none" ng-model="entity.content" class="ng-pristine ng-valid"></textarea>
+                </div>
+            </div>
+    </div>
+            <div class="mui-input-group">
+                <div class="mui-button-row">
+					<button class="mui-btn mui-btn-numbox-plus mui-btn-primary" type="button">保存</button>
+					<button class="mui-btn mui-btn-numbox-plus mui-btn-danger" type="button" id="reset">重置</button>
+                </div>
+            </div>
+    </div>
+</div>
+

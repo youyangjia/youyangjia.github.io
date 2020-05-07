@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>我的粉丝——阿蚌丁商城APP</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/basic.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+	<script src="js/iconfont.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>		
+	<style>			
+.oa-contact-cell.mui-table .mui-table-cell {padding:11px 0;vertical-align:middle;}
+.oa-contact-cell {position:relative;margin:-11px 0;}
+.oa-contact-avatar {width:75px;}
+.oa-contact-avatar img {border-radius:50%;}
+.oa-contact-content {width:100%;}
+.oa-contact-name {margin-right:20px;}
+.oa-contact-name,oa-contact-position {float:left;}
+		</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		 <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">我的粉丝</h1>	
+	</header>
+	<nav class="mui-bar mui-bar-tab mui-bar-topline">
+		<a class="mui-tab-item" href="fenxiaozhongxin.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">分销中心</span>
+		</a>
+		<a class="mui-tab-item" href="fenxiaoyongjin.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-gold"></span>
+			<span class="mui-tab-label">分销佣金</span>
+		</a>
+		<a class="mui-tab-item" href="fenxiaoyjmingxi.html">
+			<span class="mui-icon mui-icon-list"></span>
+			<span class="mui-tab-label">佣金明细</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="fenxiaowodefensi.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
+			<span class="mui-tab-label">我的粉丝</span>
+		</a>
+		<a class="mui-tab-item" href="index-wodexiaodian.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-hotel"></span>
+			<span class="mui-tab-label">我的小店</span>
+		</a>
+	</nav>	
+	<div class="mui-content">	
+						<div class="order-list-fixed">
+							<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+								<a class="mui-control-item mui-active" href="#item1">铁粉(1)</a>
+								<a class="mui-control-item" href="#item2">外围粉(2)</a>								
+							</div>
+						</div>
+						<div style="margin-top: 45px;">
+							<div id="item1" class="mui-control-content mui-active">
+					<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="images/pingjiaicon.jpg" width="60px" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">马云</h4>
+									<span class="oa-contact-position mui-h6">青铜会员</span>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									yewenjie@sina.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>				
+					</ul>
+							</div>
+							<div id="item2" class="mui-control-content">
+								<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+								<li class="mui-table-view-cell">
+									<div class="mui-slider-cell">
+										<div class="oa-contact-cell mui-table">
+											<div class="oa-contact-avatar mui-table-cell">
+												<img src="images/pingjiaicon.jpg" width="60px" />
+											</div>
+											<div class="oa-contact-content mui-table-cell">
+												<div class="mui-clearfix">
+													<h4 class="oa-contact-name">马云</h4>
+													<span class="oa-contact-position mui-h6">青铜会员</span>
+												</div>
+												<p class="oa-contact-email mui-h6">
+													yewenjie@sina.com
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>	
+											<li class="mui-table-view-cell">
+												<div class="mui-slider-cell">
+													<div class="oa-contact-cell mui-table">
+														<div class="oa-contact-avatar mui-table-cell">
+															<img src="images/pingjiaicon.jpg" width="60px" />
+														</div>
+														<div class="oa-contact-content mui-table-cell">
+															<div class="mui-clearfix">
+																<h4 class="oa-contact-name">马云</h4>
+																<span class="oa-contact-position mui-h6">青铜会员</span>
+															</div>
+															<p class="oa-contact-email mui-h6">
+																yewenjie@sina.com
+															</p>
+														</div>
+													</div>
+												</div>
+											</li>				
+									</ul>
+							</div>							
+						</div>
+	</div>
+<script>
+	mui('.mui-bar-tab').on('tap','a',function(){
+console.log(this.getAttribute('href'));
+location.href = this.getAttribute('href');
+})
+</script>	
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>订单支付——阿蚌丁商城APP</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<style>
+	.mui-card{box-shadow:0 0px 1px rgba(0,0,0,.3)}
+	.paywx img{float:left;width:30px;vertical-align:middle;margin:0 10px 0 0}
+	.mui-input-row label{padding:15px 15px;font-size:16px;}
+	.mui-radio input[type='radio']:checked:before {content: '\e442';color:#007AFF;}
+	.mui-radio input[type=radio]{top:16px}
+	.mui-input-row label span{font-size:13px;color:#666}
+	</style>
+
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		  <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		 <h1 class="mui-title">订单支付</h1>
+	</header>	
+	<div class="mui-content">	
+			<div class="mui-table-view">
+				<div class="mui-content-padded mui-text-center" style="padding: 10px;">
+				<p>订单号：56895623658</p>
+				<p>订单金额</p>
+				<h3>￥460.88</h3>
+				</div>
+				<div class="mui-card">
+				<form class="mui-input-group">
+					<div class="mui-input-row mui-radio paywx" style="height: auto;">
+						<label><img src="images/yueimg.png">帐户余额<br /><span>2569元</span></label>
+						<input name="radio1" type="radio" checked>
+					</div>
+					<div class="mui-input-row mui-radio paywx" style="height: auto;">
+						<label><img src="images/wxpay.png">微信支付<br /><span>微信安全支付</span></label>
+						<input name="radio1" type="radio">
+					</div>
+					<div class="mui-input-row mui-radio paywx" style="height: auto;">
+						<label><img src="images/zfbpay.png">支付宝支付<br /><span>支付宝安全支付</span></label>
+						<input name="radio1" type="radio">
+					</div>
+					<div class="mui-input-row mui-radio paywx" style="height: auto;">
+						<label><img src="images/ylpay.png">银联支付<br /><span>银行卡安全支付</span></label>
+						<input name="radio1" type="radio">
+					</div>
+					 <a type="button" class="mui-btn mui-btn-danger mui-btn-block" style="background:#F40301;border-radius:10px;margin:20px auto;width:80%;" href="paySuccess.html">立即支付</a>
+				</form>
+			</div>
+			</div>		 
+	</div>
+</body>
+</html>

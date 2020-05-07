@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>评价——阿蚌丁商城APP</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>
+	<link href="css/basic.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />   
+	<link href="css/layui/css/layui.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<style>
+		.mui-badge{background: none;}
+		.mui-media-body h4,.mui-media-body h5{line-height: 20px;}			
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		  <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		 <h1 class="mui-title">评价订单</h1>
+	</header>	
+	<div class="mui-content">	
+			<div class="mui-table-view mui-table-view-cell mui-media mui-text-center" style="margin:0 0 10px 0"><p>订单号：45256256987</p>  <p>2019-12-09  12:05:50</p></div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">					
+						<img class="mui-media-object mui-pull-left" src="images/pingjiaicon.jpg">
+						<div class="mui-media-body">
+							  <h4 class="mui-ellipsis-2 pingjiatitle">物流服务评价</h4>
+		                    <h5>刘远东 0771-5698569</h5>
+		                    <p class="mui-h6 mui-ellipsis">广西南宁市龙腾支部书记委员</p>
+						</div>					
+				</li>
+				 <li class="mui-table-view-cell">快递包装<div id="test4" class="mui-badge"></div></li>
+				  <li class="mui-table-view-cell">送货速度<div id="test5" class="mui-badge"></div></li>
+				   <li class="mui-table-view-cell">配送员服务<div id="test6" class="mui-badge"></div></li>
+			</ul>
+				<div class="mui-table-view" style="margin:10px 0 0 0">
+					<div class="pingjia-proimg mui-pull-left mui-text-left mui-content-padded"><img src="images/pro_mianmo.jpg" /><p>牡蛎精华保湿面膜牡蛎精华保湿面膜</p><p>￥1000.00</p><p></p></div>
+					<li class="mui-pull-right mui-content-padded" style="line-height: 100px;"><h4 style="position: relative;left: 10px;top:30px">商品评分</h4><div id="test2" class="mui-badge"></div></li>
+					<div class="mui-clearfix"></div>
+					<div class="mui-content-padded">
+						<h4 class="pingjiatitle">买家印象</h4>
+					 <ul class="Buyeryx">    
+						<li id="ban1">
+						<div>
+							<input type="checkbox" name="CheckboxGroup1" id="bank1" value="" class="yx_radiobtn"  />
+   							 <label class="bank-01" for="bank1">是正品</label>
+    							</div>
+							</li>
+       							  <li id="ban2">
+       							   <div>
+         							  <input type="checkbox" name="CheckboxGroup1" id="bank2" value="" class="yx_radiobtn"  />
+         							  <label class="bank-02" for="bank2">外观精美</label>
+         							 </div>
+       							 </li>
+        							  <li id="ban3">
+        							  <div>
+        							   <input type="checkbox" name="CheckboxGroup1" id="bank3" value="" class="yx_radiobtn" />
+         							  <label class="bank-03" for="bank3">发货快</label>
+         							 </div>
+      							  </li>
+       							   <li id="ban4">
+        							  <div>
+         							  <input type="checkbox" name="CheckboxGroup1" id="bank4" value="" class="yx_radiobtn"  />
+         							  <label class="bank-04" for="bank4">送货可以</label>
+         							 </div>
+       							  </li>
+        							 <li id="ban5">
+        							  <div>
+         							  <input type="checkbox" name="CheckboxGroup1" id="bank5" value="" class="yx_radiobtn" />
+          							 <label class="bank-05" for="bank5">操作简单</label>
+         							 </div>
+       							 </li>
+        							  <li id="ban6">
+        							  <div>
+         							  <input type="checkbox" name="CheckboxGroup1" id="bank6" value="" class="yx_radiobtn"  />
+         							  <label class="bank-06" for="bank6">价格便宜</label>
+         							 </div>
+       							 </li>
+       							 </ul>
+								
+								 <h4 class="pingjiatitle">评价晒单</h4>
+								 <div class="mui-input-row">
+									<textarea id="textarea" rows="5" placeholder="分享体验心得,给千万想买的人一个参考" style="margin:10px 0 0 0;padding:5px;"></textarea>
+								</div>
+								
+								<button type="button" class="mui-btn mui-btn-danger mui-btn-block">发表</button>
+								
+								 </div>								 								  
+				</div>
+				
+				
+	</div>
+</body>
+<script src="css/layui/layui.js" charset="utf-8"></script>
+<script>
+layui.use(['rate'], function(){
+  var rate = layui.rate;
+  //基础效果
+  rate.render({
+    elem: '#test1'
+  })
+ 
+  //显示文字
+  rate.render({
+    elem: '#test2'
+    ,value: 2 //初始值
+    ,text: true //开启文本
+  });
+ 
+  //半星效果
+  rate.render({
+    elem: '#test3'
+    ,value: 2.5 //初始值
+    ,half: true //开启半星
+  })
+  rate.render({
+    elem: '#test4'
+    ,value: 3.5
+    ,half: true
+    ,text: true
+  })
+ 
+  //自定义文本
+  rate.render({
+    elem: '#test5'
+    ,value: 3
+    ,text: true
+    ,setText: function(value){ //自定义文本的回调
+      var arrs = {
+        '1': '极差'
+        ,'2': '差'
+        ,'3': '中等'
+        ,'4': '好'
+        ,'5': '极好'
+      };
+      this.span.text(arrs[value] || ( value + "星"));
+    }
+  })
+  rate.render({
+    elem: '#test6'
+    ,value: 1.5
+    ,half: true
+    ,text: true
+    ,setText: function(value){
+      this.span.text(value);
+    }
+  })
+ 
+  //自定义长度
+  rate.render({
+    elem: '#test7'
+    ,length: 3
+  });
+  rate.render({
+    elem: '#test8'
+    ,length: 10
+    ,value: 8 //初始值
+  });
+ 
+  //只读
+  rate.render({
+    elem: '#test9'
+    ,value: 4
+    ,readonly: true
+  });
+ 
+  //主题色
+  rate.render({
+    elem: '#test10'
+    ,value: 3
+    ,theme: '#FF8000' //自定义主题色
+  });
+  rate.render({
+    elem: '#test11'
+    ,value: 3
+    ,theme: '#009688'
+  });
+ 
+  rate.render({
+    elem: '#test12'
+    ,value: 2.5
+    ,half: true
+    ,theme: '#1E9FFF'
+  })
+  rate.render({
+    elem: '#test13'
+    ,value: 2.5
+    ,half: true
+    ,theme: '#2F4056'
+  });
+  rate.render({
+    elem: '#test14'
+    ,value: 2.5
+    ,half: true
+    ,theme: '#FE0000'
+  })
+});
+</script>
+ <script type="text/javascript">
+                $(document).ready(function () {
+                    $(".Buyeryx li").each(function (index) {
+                        $(this).click(function () {
+                            addrssid = $(this).attr("id");
+                            id = addrssid.replace('ban', '');
+                            if ($("#bank" + id).attr("checked")) {
+                                $("#ban" + id).addClass('cur-yx');
+                            }
+							else {
+                                $("#ban" + id).removeClass('cur-yx');
+                            }
+                        });
+						
+                    });
+                });
+            </script>
+</html>

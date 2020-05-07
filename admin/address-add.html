@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>新增收货人地址——阿蚌丁商城APP</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/app.css" rel="stylesheet"/>		
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link href="css/mui.picker.css" rel="stylesheet" />
+	<link href="css/mui.poppicker.css" rel="stylesheet" />
+	<style>
+		.mui-push-right{position: absolute;right: 0;}
+		.mui-bar-topline{-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .25); box-shadow: 0 0 1px rgba(0, 0, 0, .25)}/*底部选项卡黑线*/
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		  <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		 <h1 class="mui-title">新增收货人地址</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab mui-bar-topline">
+		<a class="mui-tab-item mui-active" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="fenxiaozhongxin.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-peoples"></span>
+			<span class="mui-tab-label">分销中心</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</nav>		
+	<div class="mui-content">		
+				<form class="mui-input-group">				
+					<div class="mui-input-row">
+						<label>联系人</label>
+						<input type="text" class="mui-input-clear" placeholder="收货人姓名">
+					</div>	
+					<div class="mui-input-row">
+						<label>手机号</label>
+						<input type="text" class="mui-input-clear" placeholder="请输入收货人手机号码">
+					</div>
+					<div class="mui-input-row">
+						<label>所在地区</label>
+						
+						
+							<input type="text" id='cityResult3' class="mui-input-clear" placeholder='点击选择地区'>
+							<a id='showCityPicker3'>
+								<span class="mui-block mui-icon mui-icon-location mui-text-right" style="width: 60%;position: absolute;top: 20%;right: 10px;color: #323232;"></span>
+								
+							</a>
+						<!--a id='showCityPicker3' class="mui-icon mui-icon-location"></a--> 
+						
+					</div>
+					<div class="mui-input-row">
+						<label>详细地址</label>
+						<input type="text" class="mui-input-clear" placeholder="楼号,门牌">
+					</div>	
+					<li class="mui-table-view-cell mui-list-unstyled">
+					<span></span>
+					<div class="mui-switch mui-switch-blue mui-switch-mini">
+						<div class="mui-switch-handle"></div>
+					</div>					
+				</li>
+					<div class="mui-button-row">
+						<button type="button" class="mui-btn mui-btn-primary" onclick="return false;" style="width: 80%;">确认</button>
+					</div>
+				</form>
+				
+						
+		
+	</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					
+					//-----------------------------------------
+					//					//级联示例
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('showCityPicker3');
+					var cityResult3 = doc.getElementById('cityResult3');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							cityResult3.placeholder =_getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+		</script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			mui('.mui-content .mui-switch').each(function() { //循环所有toggle
+				//toggle.classList.contains('mui-active') 可识别该toggle的开关状态
+				this.parentNode.querySelector('span').innerText = '设为默认：' + (this.classList.contains('mui-active') ? '已选' : '未选');
+				/**
+				 * toggle 事件监听
+				 */
+				this.addEventListener('toggle', function(event) {
+					//event.detail.isActive 可直接获取当前状态
+					this.parentNode.querySelector('span').innerText = '设为默认：' + (event.detail.isActive ? '已选' : '未选');
+				});
+			});
+		</script>
+<script>mui('.mui-bar-tab').on('tap','a',function(){window.top.location.href=this.href;});</script>		
+</body>
+</html>
