@@ -1,4 +1,18 @@
-<html lang="zh"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#divUL div{
+				float: left;
+			}
+			.html-body-overflow
+		    {
+			  overflow-x:auto;
+			  overflow-y:auto;
+		    }
+		</style>
+	</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="renderer" content="webkit">
@@ -13,8 +27,89 @@
 	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
     <script type="text/javascript" charset="utf-8">
       	mui.init();	
+		
+        //图片上传
+        var xhr;
+        //上传文件方法
+        function UploadFile() {
+            var fileObj = document.getElementById("file").files[0]; // js 获取文件对象
+            var url =  "http://localhost:8080" + "/api/attachment/upload"; // 接收上传文件的后台地址
+ 
+            var form = new FormData(); // FormData 对象
+            form.append("file", fileObj); // 文件对象
+ 
+            xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
+            xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
+            xhr.onload = uploadComplete; //请求完成
+            xhr.onerror =  uploadFailed; //请求失败
+ 
+            xhr.upload.onprogress = progressFunction;//【上传进度调用方法实现】
+            xhr.upload.onloadstart = function(){//上传开始执行方法
+                ot = new Date().getTime();   //设置上传开始时间
+                oloaded = 0;//设置上传开始时，以上传的文件大小为0
+            };
+ 
+            xhr.send(form); //开始上传，发送form数据
+        }
+ 
+        //上传成功响应
+        function uploadComplete(evt) {
+            //服务断接收完文件返回的结果
+ 
+            var data = JSON.parse(evt.target.responseText);
+            if(data.success) {
+                alert("上传成功！");
+            }else{
+                alert("上传失败！");
+            }
+ 
+        }
+        //上传失败
+        function uploadFailed(evt) {
+            alert("上传失败！");
+        }
+        //取消上传
+        function cancleUploadFile(){
+            xhr.abort();
+        }
+ 
+ 
+        //上传进度实现方法，上传过程中会频繁调用该方法
+        function progressFunction(evt) {
+            var progressBar = document.getElementById("progressBar");
+            var percentageDiv = document.getElementById("percentage");
+            // event.total是需要传输的总字节，event.loaded是已经传输的字节。如果event.lengthComputable不为真，则event.total等于0
+            if (evt.lengthComputable) {//
+                progressBar.max = evt.total;
+                progressBar.value = evt.loaded;
+                percentageDiv.innerHTML = Math.round(evt.loaded / evt.total * 100) + "%";
+            }
+            var time = document.getElementById("time");
+            var nt = new Date().getTime();//获取当前时间
+            var pertime = (nt-ot)/1000; //计算出上次调用该方法时到现在的时间差，单位为s
+            ot = new Date().getTime(); //重新赋值时间，用于下次计算
+            var perload = evt.loaded - oloaded; //计算该分段上传的文件大小，单位b
+            oloaded = evt.loaded;//重新赋值已上传文件大小，用以下次计算
+            //上传速度计算
+            var speed = perload/pertime;//单位b/s
+            var bspeed = speed;
+            var units = 'b/s';//单位名称
+            if(speed/1024>1){
+                speed = speed/1024;
+                units = 'k/s';
+            }
+            if(speed/1024>1){
+                speed = speed/1024;
+                units = 'M/s';
+            }
+            speed = speed.toFixed(1);
+            //剩余时间
+            var resttime = ((evt.total-evt.loaded)/bspeed).toFixed(1);
+            time.innerHTML = '，速度：'+speed+units+'，剩余时间：'+resttime+'s';
+            if(bspeed==0) time.innerHTML = '上传已取消';
+        }
     </script>
-<body class="main_body" style="">
+<body style="overflow:hidden">
 <div class="mui-bar mui-bar-transparent">
 
     <!--主题内容区域 start-->
@@ -30,8 +125,8 @@
         </span>
     </div>
 
-    <div class="mui-input-group edit-goods" style="">
-        <form class="mui-input-group ng-pristine ng-valid" action="" style="">
+    <div class="mui-input-group" style="">
+        <form class="mui-input-group" action="" style="">
             <div class="mui-input-group">
                 <label>商品名称</label>
                 <div class="mui-button-rowe">
@@ -60,8 +155,6 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="mui-input-group">
 				<label>排序</label>
                 <div class="mui-button-row" style="width: 130px">
@@ -78,24 +171,27 @@
             <div class="mui-input-group">
 				<label>商品图片</label>
                 <div class="mui-button-row">
-                    <div class="goods-images" style="height: 340px; width: 800px; border: 1px solid #CCCCCC ">
-                        <!-- ngRepeat: item in images --><div class="upload-icon ng-scope" ng-repeat="item in images">
-                            <img ng-src="" src="">
-                            <span class="icon-delete" ng-click="images.splice($index, 1)">
-                                <span class="icon-delete-bg"></span>
-                                <span class="icon-delete-font">
-                                    <i class="fa fa-times-circle"></i>
-                                </span>
-                            </span>
-                        </div><!-- end ngRepeat: item in images -->
-                        <!-- 上传图片按钮 -->
-                        <div class="upload-icon" id="uploadImage">
-                            <span class="upload-btn"><i class="fa fa-plus"></i></span>
-                        </div><input class="upload-file" type="file" accept="undefined" name="file">
-                    </div>
+					<!-- 上传图片按钮 -->
+					<div class="wrapper">
+						<input type="file" multiple="multiple" name="listInput" id="listInput" value="" />
+						<div id="divUL">
+				
+						</div>
+					</div>
                 </div>
             </div>
-            <div class="mui-input-group" style="">
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+    </div>
+			<div class="mui-input-group" style="">
                 <label>商品详情</label>
                 <div class="mui-button-row" style="width: 800px;">
                     <!-- 加载编辑器的容器 -->
@@ -113,7 +209,20 @@
                     <textarea id="ueditorContent" style="display:none" ng-model="entity.content" class="ng-pristine ng-valid"></textarea>
                 </div>
             </div>
-    </div>
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
             <div class="mui-input-group">
                 <div class="mui-button-row">
 					<button class="mui-btn mui-btn-numbox-plus mui-btn-primary" type="button">保存</button>
@@ -122,4 +231,22 @@
             </div>
     </div>
 </div>
+</body>
+<script type="text/javascript">
+	
+	//多张
+	document.getElementById("listInput").addEventListener("change",function(){
+		var files = this.files;
+		var oUL = document.getElementById("divUL");
+		oUL.innerHTML = "";
+		for(var i = 0;i < files.length;i++){
+			oUL.innerHTML += '<div><img id="img'+i+'" /></div>'
+			var imgList = document.getElementById("img"+i);
+			imgList.style.height = "200px";
+			imgList.style.width = "200px";
+			imgList.src = window.URL.createObjectURL(files[i]);
+		}
+	});	
 
+</script>
+</html>
