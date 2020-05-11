@@ -6,11 +6,34 @@
 			#divUL div{
 				float: left;
 			}
-			.html-body-overflow
-		    {
-			  overflow-x:auto;
-			  overflow-y:auto;
-		    }
+			#container {
+				width: 90%;
+				overflow:auto; 
+				margin: 0 auto;
+			}
+			html {
+				overflow-y: scroll;
+			}
+			:root {
+				overflow-y: auto;
+				overflow-x: hidden;
+			}
+			:root body {
+				position: absolute;
+			}
+			body {
+				width: 100vw;
+				overflow: hidden;
+			}
+			body,input{
+				margin: 0;
+				padding: 0;
+				background: pink;
+			}
+			input{
+				display: inline-block;
+				background: #fff;
+			}
 		</style>
 	</head>
     <meta charset="UTF-8">
@@ -27,17 +50,51 @@
 	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
     <script type="text/javascript" charset="utf-8">
       	mui.init();	
-		
+		function httpPost(URL, PARAMS) {
+		    var temp = document.createElement("form")
+		    temp.action = URL
+		    temp.method = "post"
+		    temp.style.display = "none"
+
+		    for (var x in PARAMS) {
+		        var opt = document.createElement("textarea")
+		        opt.name = x
+		        opt.value = PARAMS[x]
+		        temp.appendChild(opt)
+		    }
+			document.body.appendChild(temp)
+		    temp.submit()
+		  
+		    return
+		}
         //图片上传
         var xhr;
         //上传文件方法
-        function UploadFile() {
-            var fileObj = document.getElementById("file").files[0]; // js 获取文件对象
-            var url =  "http://localhost:8080" + "/api/attachment/upload"; // 接收上传文件的后台地址
- 
-            var form = new FormData(); // FormData 对象
-            form.append("file", fileObj); // 文件对象
- 
+        function onClick() {
+            var fileObjs = document.getElementById("listInput").files; // js 获取文件对象
+			var form = new FormData(); // FormData 对象
+			for (var i=0;i<fileObjs.length;i++)
+			{
+				fileObj = fileObjs[i];
+				var key_name = "file" + i
+				form.append(key_name, fileObj);
+			}
+            var url =  "http://159.138.55.39:16000" + "/goods"; // 接收上传文件的后台地址
+			var name = document.getElementById("name").value;
+			var good_code = document.getElementById("good_code").value;
+			var flavor = document.getElementById("flavor").value;
+			var price = document.getElementById("price").value;
+			var index = document.getElementById("index").value;
+			var inventory = document.getElementById("inventory").value;
+			var ue = UE.getEditor('container');
+			var description = ue.getContentTxt();
+			form.append("name", name);
+			form.append("good_code", good_code);
+			form.append("flavor", flavor);
+			form.append("price", price);
+			form.append("index", index);
+			form.append("inventory", inventory);
+			form.append("description", description) ;
             xhr = new XMLHttpRequest();  // XMLHttpRequest 对象
             xhr.open("post", url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。
             xhr.onload = uploadComplete; //请求完成
@@ -109,12 +166,11 @@
             if(bspeed==0) time.innerHTML = '上传已取消';
         }
     </script>
-<body style="overflow:hidden">
+<body>
 <div class="mui-bar mui-bar-transparent">
 
     <!--主题内容区域 start-->
         <!-- 内容主体区域 -->
-        <!-- ngView:  --><div ng-view="" class="ng-view-content ng-scope" style=""><div class="content ng-scope" style="">
     <div class="mui-content-padded">
         <span class="mui-content-padded">
           <a href="javascript:;" ng-click="gotoDashboard()">首页</a>
@@ -130,19 +186,19 @@
             <div class="mui-input-group">
                 <label>商品名称</label>
                 <div class="mui-button-rowe">
-                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容" id="name">
                 </div>
             </div>
             <div class="mui-input-group">
                 <label>商品代码</label>
                 <div class="mui-button-rowe">
-                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容" id="good_code">
                 </div>
             </div>
             <div class="mui-input-group">
                 <label>规格</label>
                 <div class="mui-button-row" style="width: 130px ">
-                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容" id="flavor">
                 </div>
             </div>
 
@@ -150,7 +206,7 @@
 				<label>价格</label>
                 <div class="mui-button-row" style="width: 130px ">
                     <div class="input-group">
-                        <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                        <input type="text" class="mui-input-clear" placeholder="请输入内容" id="price">
                         <span class="input-unit">元</span>
                     </div>
                 </div>
@@ -158,13 +214,13 @@
             <div class="mui-input-group">
 				<label>排序</label>
                 <div class="mui-button-row" style="width: 130px">
-                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容" id="index">
                 </div>
             </div>
             <div class="mui-input-group">
 				<label>库存</label>
                 <div class="mui-button-row" style="width: 130px">
-                    <input type="text" class="mui-input-clear" placeholder="请输入内容">
+                    <input type="text" class="mui-input-clear" placeholder="请输入内容" id="inventory">
                 </div>
             </div>
 
@@ -206,7 +262,7 @@
 					<script type="text/javascript">
 						var ue = UE.getEditor('container');
 					</script>
-                    <textarea id="ueditorContent" style="display:none" ng-model="entity.content" class="ng-pristine ng-valid"></textarea>
+                    <textarea id="ueditorContent" style="display:none" ng-model="entity.content" class="ng-pristine ng-valid" ></textarea>
                 </div>
             </div>
 
@@ -225,7 +281,7 @@
 			<br />
             <div class="mui-input-group">
                 <div class="mui-button-row">
-					<button class="mui-btn mui-btn-numbox-plus mui-btn-primary" type="button">保存</button>
+					<button class="mui-btn mui-btn-numbox-plus mui-btn-primary" type="button" onclick="onClick()">保存</button>
 					<button class="mui-btn mui-btn-numbox-plus mui-btn-danger" type="button" id="reset">重置</button>
                 </div>
             </div>
