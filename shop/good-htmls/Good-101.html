@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>商品详情</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+	<link href="../css/basic.css" rel="stylesheet"/>
+	<link href="../css/app.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-transparent">
+		   <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">详情展示</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab mui-bar-topline" style="height:54px">
+
+							<a href="index.html" class="mui-block mui-pull-left mui-text-center" style="margin:0 1rem 0 1rem;color:#929292">
+		                    <span class="mui-icon mui-icon-home" style="line-height:10px"></span>
+		                    <div style="font-size:12px;">首页</div>
+							</a>
+							<a href="#" class="mui-block mui-pull-left mui-text-center" style="color:#929292">
+		                    <span class="mui-icon mui-icon-extra mui-icon-extra-cart"  style="line-height:10px;"></span>
+		                    <div style="font-size:12px;">购物车</div>
+							</a>
+							<a href="#" class="mui-block mui-pull-left mui-text-center" style="margin:0 0 0 1rem;color:#929292">
+		                    <span class="mui-icon mui-icon-extra mui-icon-extra-heart"  style="line-height:10px"></span>
+		                    <div style="font-size:12px;">收藏</div>
+							</a>
+			   <div style="margin:.4rem 1rem 0 0;">
+				   <a class="mui-inline mui-block mui-pull-right mui-btn-danger buynow" href="confirmation.html">立即购买</a>
+			   <a class="mui-inline mui-block mui-pull-right mui-btn-warning addshopcart" href="">加入购物车</a>
+			   </div>
+
+	</nav>
+	<div class="mui-content">
+	<div class="mui-slider">
+  <div class="mui-slider-group mui-slider-loop">
+    <!--支持循环，需要重复图片节点-->
+    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../4.jpg" /></a></div>
+    <div class="mui-slider-item"><a href="#"><img src="../good-images/101-0.jpg" /></a></div>
+    <!--支持循环，需要重复图片节点-->
+    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../good-images/101-0.jpg" /></a></div>
+  </div>
+</div>
+
+	<div style="padding:10px 0;background: #FFFFFF;">
+	<div class="mui-content-padded">
+		<h4 class="proname_normal">乳猪教槽配合饲料---优养乐</h4>
+		<h3 class="mui-inline pricecolor">￥220/袋</h3>
+		<div class="mui-table">
+		<div class="mui-table-cell mui-text-left">
+		</div>
+		<div class="mui-table-cell mui-text-left">
+        <p>库存：9999</p>
+		</div>
+</div>
+	</div>
+</div>
+		<ul class="mui-table-view" style="background: #FFFFFF;">
+				<li class="mui-table-view-cell">
+						<p class="mui-inline">商品描述</p>  产品名称：乳猪教槽配合饲料---优养乐产品代号：101适用阶段：出生7天——断奶后前2周包装规格：20kg/袋产品性状：破碎 产品详情：1，各项指标：粗蛋白≥%粗纤维≤%粗灰分≥%钙%总磷≥%氯化钠%赖氨酸≥%水份≤%19.04.07.00.4-1.20.40.3-1.201.4014,00 2，生产工艺：采用先进的舒化工艺对全部原料熟化，全面消除抗营养因子和降低豆类原料中的尿素酶，后期的低温制粒又确保配方中的精油等抗热敏性原料损失率大幅减小，较好的保留了配方中的热敏性营养元素，即卫生又有营养。3，产品效果上槽快，舒化工艺，入口即成糊状，口感好，只需三天诱食，小猪便可主动采食。抗拉稀，任性吃，消化好，抗拉稀强。长得快，肯吃，自然长得快。物流规则：买方承担运费 产品名称：乳猪（保育）配合饲料--优养宝产品代号：102适用阶段：5天-断奶后前两周包装规格：40kg/袋产品性状：酥化颗粒
+				</li>
+			</ul>
+		<h5 class="mui-text-center" style="margin:10px 0">————  商品详情  ————</h5>
+		    <p><img src="../good-images/101-0.jpg" width="100%"></p>
+	</div>
+
+<script>
+	setTimeout(function(){
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+         interval:1800//自动轮播周期，若为0则不自动播放，默认为0；
+    });
+},300)</script>
+<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		var info = document.getElementById("info");
+		document.querySelector('.mui-table-view.mui-table-view-radio').addEventListener('selected',function(e){
+			info.innerHTML = "已选："+e.detail.el.innerText;
+		});
+
+	</script>
+</body>
+</html>
